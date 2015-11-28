@@ -17,6 +17,9 @@ $(document).ready(function() {
     } catch (e) {
         fav.data[fav._last] = param;
     }
+    if (typeof fav.data[''] === 'undefined') {
+        fav.data[''] = '';
+    };
 
     param = fav.data[fav._last];
     if (param) {
