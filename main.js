@@ -5,7 +5,8 @@ $(document).ready(function() {
         _last: '',
         data: {},
     };
-    var param = localStorage[STORAGE_NAME];;
+    var param = "" + localStorage[STORAGE_NAME];
+    param = param.replace(/ReceiverKpp/g, "kpp");
     try {
         fav = JSON.parse(param);
         if (typeof fav[fav._last] !== 'undefined') {
@@ -43,7 +44,7 @@ $(document).ready(function() {
                 minlength: 10,
                 digits: true,
             },
-            ReceiverKpp: {
+            kpp: {
                 required: true,
                 maxlength: 9,
                 minlength: 9,
