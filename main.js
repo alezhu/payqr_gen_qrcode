@@ -5,8 +5,13 @@ $(document).ready(function() {
         _last: '',
         data: {},
     };
-    var param = "" + localStorage[STORAGE_NAME];
-    param = param.replace(/ReceiverKpp/g, "kpp");
+    try {
+        var param = localStorage[STORAGE_NAME];
+        param = param.replace(/ReceiverKpp/g, "kpp");
+    } catch (e) {
+        param = '';
+    }
+
     try {
         fav = JSON.parse(param);
         if (typeof fav[fav._last] !== 'undefined') {
@@ -18,6 +23,7 @@ $(document).ready(function() {
     } catch (e) {
         fav.data[fav._last] = param;
     }
+
     if (typeof fav.data[''] === 'undefined') {
         fav.data[''] = '';
     };
