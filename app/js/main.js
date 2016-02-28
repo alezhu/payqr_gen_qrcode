@@ -44,7 +44,7 @@ require.config({
     },
     packages: [{
         name: 'item',
-        location: '/modules/item',
+        location: './../../modules/item',
     }]
 });
 
