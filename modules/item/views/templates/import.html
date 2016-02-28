@@ -1,0 +1,51 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Экпорт</div>
+    <div class="panel-body">
+        <div id="export-valid" style="display:none">
+            <p>
+                Вы можете экспортировать свои шаблоны в текстовый файл и в дальнейшем импортировать его обратно в другом браузере или на другом компьютере. Экспортируются все шаблоны. Для экспорта отдельного шаблона используйте соответствующую кнопку в списке шаблонов.
+            </p>
+            <button class="btn btn-default js-export">
+                <spap class="glyphicon glyphicon-export"></spap>
+                <spap> Экспортировать</spap>
+            </button>
+        </div>
+        <div id="export-invalid">
+            <p>К сожалению вы не можете экспортировать шаблоны в этом браузере</p>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">Импорт</div>
+    <div class="panel-body">
+        <div id="import-valid" style="display:none">
+            <p>
+                Вы можете импортировать ранее сохраненные шаблоны из текстового файла. Импортируемые шаблоны будут добавлены к существующим.
+            </p>
+            <form class="form-inline">
+                <input type="file" id="file" class="form-control">
+                <button class="btn btn-default js-import" id="import" disabled="true">
+                    <spap class="glyphicon glyphicon-import"></spap>
+                    <spap> Импортировать</spap>
+                </button>
+            </form>
+        </div>
+        <div id="import-invalid">
+            <p>К сожалению вы не можете импортировать шаблоны в этом браузере</p>
+        </div>
+    </div>
+</div>
+<div class="panel panel-default" id="import-old-valid" style="display:none">
+    <div class="panel-heading">Импорт из старой версии</div>
+    <div class="panel-body">
+        <p>
+            Шаблоны импортируются автоматически из старой версии данного приложения при первом запуске новой версии. При необходимости вы можете импортировать их повтороно вручную с помощью кнопки ниже. Импортируемые шаблоны будут добавлены к существующим.
+        </p>
+        <form class="form-inline">
+            <button class="btn btn-default js-import-old">
+                <spap class="glyphicon glyphicon-import"></spap>
+                <spap> Импортировать</spap>
+            </button>
+        </form>
+    </div>
+</div>
