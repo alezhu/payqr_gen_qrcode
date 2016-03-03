@@ -16,7 +16,7 @@ define(['marionette', 'text!./templates/share.html', 'gapi', './dialog_region', 
                 if (!window.location.origin) {
                     window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
                 }
-                var url = window.location.origin + '/?share=' + encodeURIComponent(item.get('data'));
+                var url = window.location.origin + window.location.pathname + '?share=' + encodeURIComponent(item.get('data'));
                 url = url.replace(/127.0.0.1:8887/, 'alezhu.github.io/payqr_gen_qrcode');
                 var view = this;
                 GAPI.getShortUrlAsync(url).done(function(event) {

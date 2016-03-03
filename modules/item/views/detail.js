@@ -42,7 +42,7 @@ define(['marionette', 'underscore', 'text!./templates/detail.html', 'jquery.ui',
                         if (!window.location.origin) {
                             window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
                         }
-                        window.location.href = window.location.origin;
+                        window.location.href = window.location.origin + window.location.pathname;
                     }
                 } else {
                     share = localStorage['share'] || '';
