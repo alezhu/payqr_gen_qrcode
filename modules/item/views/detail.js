@@ -63,6 +63,23 @@ define(['marionette', 'underscore', 'text!./templates/detail.html', 'jquery.ui',
                 collapsible: true,
                 heightStyle: 'content'
             });
+            $.validator.addMethod('account', function(value, element, params) {
+                if (!value || value.length != 20) return false;
+                var bic = $(params.bic).val();
+                if (!bic || bic.length != 9) return false;
+                var data = bic.substring(bic.length - 3) + value;
+                var mul = [7, 1, 3];
+                var sum = 0;
+                for (var i = 0; i < data.length; i++) {
+                    var char = data.charAt(i);
+                    var num = parseInt(char);
+                    sum += num * mul[i % 3];
+                }
+                sum %= 10;
+                if (sum != 0) return false;
+                return true;
+
+            }, 'Введен некорректный номер счета');
 
             var validator = this.ui.form.validate({
                 onSubmit: false,
@@ -94,13 +111,13 @@ define(['marionette', 'underscore', 'text!./templates/detail.html', 'jquery.ui',
                         maxlength: 20,
                         minlength: 20,
                         digits: true,
+                        account: { bic: '#ReceiverBic' },
                     },
                 },
                 messages: {
 
                 },
             });
-
         }
     });
     return View;
