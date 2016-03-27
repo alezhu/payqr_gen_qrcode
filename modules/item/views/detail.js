@@ -67,7 +67,12 @@ define(['marionette', 'underscore', 'text!./templates/detail.html', 'jquery.ui',
                 if (!value || value.length != 20) return false;
                 var bic = $(params.bic).val();
                 if (!bic || bic.length != 9) return false;
-                var data = bic.substring(bic.length - 3) + value;
+                var bicStr = bic.substring(bic.length - 3);
+                var bicNum = parseInt(bicStr);
+                if (bicNum < 50) {
+                    bicStr = '0' + bic.substring(bic.length - 5, bic.length - 3);
+                }
+                var data = bicStr + value;
                 var mul = [7, 1, 3];
                 var sum = 0;
                 for (var i = 0; i < data.length; i++) {
