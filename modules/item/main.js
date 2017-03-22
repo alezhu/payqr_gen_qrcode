@@ -13,7 +13,7 @@ require.config({
 
     },
     paths: {
-        'localstorage': '/app/js/backbone.localStorage-min',
+        'localstorage': './backbone.localStorage-min',
         'jquery.ui': 'https://yastatic.net/jquery-ui/1.11.2/jquery-ui.min',
         'jquery.validate': ['https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min','https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min'],
         'jquery.deserialize': ['https://cdn.rawgit.com/kflorence/jquery-deserialize/master/src/jquery.deserialize','https://rawgit.com/kflorence/jquery-deserialize/master/src/jquery.deserialize'],
